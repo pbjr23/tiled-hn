@@ -8,17 +8,60 @@
     src: url("/static/fonts/lato.ttf");
 }
 
-.content {
+.categories {
+    float:left;
 }
+/*
+ #nav {
+  width: 100%;
+  float: left;
+  margin: 0 0 3em 0;
+  padding: 0;
+  list-style: none;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc; }
+
+#nav li {
+  float: left; }
+
+#nav li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #069;
+  border-right: 1px solid #ccc; }
+
+#nav li a:hover {
+  color: #c00;
+  background-color: #fff; }*/
 
 .header {
     height:50px;
     display: block;
     background: none repeat scroll 0 0 !important;
-    font-size: 36px;
-    width: 100%;
     font-family: "Lane", sans-serif !important;
     background-color: #222222 !important;
+    padding: 10px;
+    padding-left: 25px;
+}
+
+.name {
+    float:left;
+    font-size: 2.5em;
+}
+
+.categories {
+    float: right;
+    padding: 8px 15px;
+    border-left: 1px solid #DDDDDD;
+    font-size: 1.5em;
+}
+
+.categories:hover {
+    color: #EEEEEE;
+    background-color: #444444;
 }
 
 .box {

@@ -16,7 +16,9 @@ def get_data(url):
     if url == 'https://news.ycombinator.com/show':
         x = 4
 
-    for i in range(30):
+    number_values = len(tree.xpath("//td[@valign='top']"))
+
+    for i in range(number_values):
         # try:
         title = tree.xpath(base + str(x + 3*i) + ']/td[3]/a')[0].text
         # except:
