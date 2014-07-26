@@ -11,40 +11,14 @@
 .categories {
     float:left;
 }
-/*
- #nav {
-  width: 100%;
-  float: left;
-  margin: 0 0 3em 0;
-  padding: 0;
-  list-style: none;
-  background-color: #f2f2f2;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc; }
-
-#nav li {
-  float: left; }
-
-#nav li a {
-  display: block;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #069;
-  border-right: 1px solid #ccc; }
-
-#nav li a:hover {
-  color: #c00;
-  background-color: #fff; }*/
 
 .header {
     height:50px;
     display: block;
     background: none repeat scroll 0 0 !important;
     font-family: "Lane", sans-serif !important;
-    background-color: #222222 !important;
     padding: 10px;
-    padding-left: 25px;
+    padding-left: 15px;
 }
 
 .name {
@@ -120,7 +94,7 @@
 }
 
 body {
-    background-image: url("/static/images/escheresque_ste.png");
+    background-color: #222222;
 }
 
 html, body {
@@ -144,5 +118,16 @@ img {
 
 .title-url {
     color: #DDDDDD;
-    font-size: 15px;
+    font-size: 0.7em;
+}
+
+.footer {
+    position:relative;
+    bottom:0;
+    width: 100%;
+}
+
+.next {
+    font-size: 1.5em;
+    padding: 10px;
 }

@@ -6,17 +6,21 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     color_values = colors.randomize_colors()
-    data = parser.get_data('https://news.ycombinator.com/')
-    return render_template('index.html', zipped=zip(data, color_values))
+    data, next = parser.get_data('https://news.ycombinator.com/')
+    return render_template('index.html', zipped=zip(data, color_values), next=next)
 
-# View stock button
-@app.route('/view/<page>/')
-def view_page(page):
-    print 2342343243234123234234234
+
+@app.route('/jobs/')
+def view_jobs():
     color_values = colors.randomize_colors()
-    print 'https://news.ycombinator.com/' + page
-    data = parser.get_data('https://news.ycombinator.com/' + page)
-    return render_template('index.html', data=data, colors=color_values)
+    data, next = parser.get_data('https://news.ycombinator.com/jobs')
+    return render_template('index.html', zipped=zip(data, color_values), jobs=1, next=next)
+
+@app.route('/<page>/')
+def view_page(page):
+    color_values = colors.randomize_colors()
+    data, next = parser.get_data('https://news.ycombinator.com/' + page)
+    return render_template('index.html', zipped=zip(data, color_values), next=next)
 
 if __name__ == '__main__':
     app.run(debug=True)

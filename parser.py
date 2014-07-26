@@ -17,7 +17,6 @@ def get_data(url):
         x = 4
 
     number_values = len(tree.xpath("//td[@valign='top']"))
-
     for i in range(number_values):
         # try:
         title = tree.xpath(base + str(x + 3*i) + ']/td[3]/a')[0].text
@@ -69,8 +68,11 @@ def get_data(url):
         except IndexError:
             title_url = None
 
+        try:
+            next = tree.xpath(base + '92]/td[2]/a')[0].attrib['href']
+        except IndexError:
+            next = None
+
         current = (title, mini_url, title_url, comments_url, author, age, points, comments)
         data.append(current)
-    return data
-
-# print get_data('https://news.ycombinator.com/jobs')
+    return data, next
