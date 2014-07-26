@@ -1,19 +1,32 @@
+@font-face {
+    font-family: Lane;
+    src: url("/static/fonts/lane.ttf");
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("/static/fonts/lato.ttf");
+}
+
+.content {
+}
+
 .header {
     height:50px;
     display: block;
     background: none repeat scroll 0 0 !important;
     font-size: 36px;
     width: 100%;
-    font-weight: 400;
+    font-family: "Lane", sans-serif !important;
+    background-color: #222222 !important;
 }
 
-
 .box {
+    display: inline-block;
     background-color: red;
-    font-size: 22px;
-    height: 180px;
-    width: 280px;
-    positive: relative;
+    font-size: 1.25em;
+    height: 176.1px;
+    width: 285px;
     float: left;
     margin-top: 4px;
     margin-bottom: 4px;
@@ -26,36 +39,51 @@
     position: relative;
 }
 
-.left {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    font-size: 18px;
+.title {
+    padding: 6px;
+    padding-top: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    height:58%;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.title:hover {
+    background-color:rgba(0,0,0,0.7) !important;
+}
+
+.bottom {
+    padding: 6px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+}
+
+.bottom:hover {
+    background-color:rgba(0,0,0,0.7) !important;
 }
 
 .right {
     position: absolute;
-    right: 5px;
-    bottom: 5px;
-    font-size: 16px;
-    text-align: right
+    right: 17px;
+    bottom: 12px;
+    text-align: right;
 }
 
-.title {
-    padding: 6px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+.left {
+    text-align: left;
 }
 
 body {
-    background-color: #212121;
+    background-image: url("/static/images/escheresque_ste.png");
 }
 
 html, body {
     margin:0;
     padding:0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family: "Lato", sans-serif;
     color: white;
 }
 
@@ -65,10 +93,10 @@ a {
 }
 
 img {
-    width: 32px;
-    height: auto;
+    height: 20px;
+    width: auto;
     position: relative;
-    top: 2px;
+    top: 4px;
 }
 
 .title-url {

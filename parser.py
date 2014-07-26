@@ -51,12 +51,12 @@ def get_data(url):
 
         if x == 3:
             try:
-                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]')[0].text
+                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]')[0].text.replace('minutes', 'min')
             except IndexError:
                 age = None
         else:
             try:
-                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[1]')[0].tail[1:-4]
+                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[1]')[0].tail[1:-4].replace(' ago', '')
             except IndexError:
                 age = None
 

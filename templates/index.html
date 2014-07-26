@@ -4,67 +4,69 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="/static/css/main.css">
-      <title>TiledNH</title>
-    </head>
-
-    <style type="text/css">
-        {% set counter = 0 -%}
-        {% for item, color in zipped %}
-            #{{counter}}:hover {
-                background-color: {{ color[2] }} !important;
-            }
-        {% set counter = counter + 1 -%}
-        {% endfor %}
-    </style>
-
-    <body>
-        <div class="Container">
-            <div class="header">
-                TiledHN - A Tiled Approach to Hacker News
-            </div>
-
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/css/main.css">
+        <link rel="stylesheet" href="/static/css/icons.css">
+        <title>TiledNH</title>
+        <style type="text/css">
             {% set counter = 0 -%}
             {% for item, color in zipped %}
-            <a href="{{ item[2] }}">
-                <div class="box" id="{{counter}}" style="background-color: {{ color[0] }}">
+                .box{{counter}}:hover {
+                    background-color: {{ color[2] }} !important;
+                }
+            {% set counter = counter + 1 -%}
+            {% endfor %}
+        </style>
+    </head>
+
+
+
+    <body>
+        <nav class="header">
+            TiledHN - A Tiled Approach to Hacker News
+        </nav>
+
+        <div class="content" align="center">
+            {% set counter = 0 -%}
+            {% for item, color in zipped %}
+            <div class="box box{{counter}}" style="background-color: {{ color[0] }}">
+                <a href="{{ item[2] }}" target="_blank">
                     <div class="title" style="background-color: {{ color[1] }}">
                         {{item[0]}} <span class="title-url"> {{item[1]|default("")}} </span>
                     </div>
+                </a>
 
+                <a href="{{ item[3]|default('#') }}" target="_blank">
                     <div class="bottom" style="background-color: {{ color[1] }}">
-                    <div class="left">
-                        <div> <img src="/static/images/time_small.png" alt="Age"> {{ item[5] }} </div>
-                        <div> <img src="/static/images/star_small.png" alt="Points"> {{ item[6] }} </div>
-                    </div>
+                        <div class="left">
+                            <div> <i class="icon-clock"></i> {{ item[5] }} </div>
 
-                    <div class="right">
-                        <div>
-                            <img src="/static/images/profile_small.png" alt="Profile">
-                            <a href="https://news.ycombinator.com/user?id={{ item[4] }}">
-                                {{ item[4] }}
-                            </a>
+                            <div> <i class="icon-thumbs-up-alt"></i> {{ item[6] }} </div>
                         </div>
-                        <div>
-                            <img src="/static/images/comments_small.png" alt="Comments">
-                            <a href="{{ item[3]|default('#') }}">
-                                {{ item[7]|default('discuss') }}
+
+                        <div class="right">
+                            <a href="https://news.ycombinator.com/user?id={{ item[4] }}" target="_blank">
+                                <div class="user">
+                                    <i class="icon-user"></i>
+                                    {{ item[4] }}
+                                </div>
+                            </a>
+
+                            <a href="{{ item[3]|default('#') }}" target="_blank">
+                                <div>
+                                    <i class="icon-chat"></i>
+                                    {{ item[7]|default('discuss') }}
+                                </div>
                             </a>
                         </div>
                     </div>
-                    </div>
-                </div>
-            </a>
+                </a>
+            </div>
             {% set counter = counter + 1 -%}
             {% endfor %}
-
-            <div class="Body">
-
-            </div>
         </div>
 
     </body>
