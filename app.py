@@ -9,7 +9,6 @@ def main():
     data, has_next = parser.get_data('https://news.ycombinator.com/')
     return render_template('index.html', zipped=zip(data, color_values), next=has_next)
 
-
 @app.route('/jobs/')
 def view_jobs():
     color_values = colors.randomize_colors()
