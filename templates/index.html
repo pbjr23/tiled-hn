@@ -27,6 +27,7 @@
     <body>
         <nav class="header">
             <div class="name"><i class="icon-hacker-news"></i>TiledHN - A Tiled Approach to Hacker News</div>
+            <div class="categories"><a href="link"><i class="icon-github"></i></a></div>
             <div class="categories"><a href="/jobs/">Jobs</a></div>
             <div class="categories"><a href="/ask/">Ask</a></div>
             <div class="categories"><a href="/show/">Show</a></div>
@@ -78,8 +79,10 @@
             {% endfor %}
         </div>
 
+        {% if next %}
         <div class="footer">
-            <a href="#" class="next">Next</a>
+            <a href="/{{next}}/" class="next">Next</a>
         </div>
+        {% endif %}
     </body>
 </html>

@@ -8,10 +8,6 @@
     src: url("/static/fonts/lato.ttf");
 }
 
-.categories {
-    float:left;
-}
-
 .header {
     height:50px;
     display: block;
@@ -122,12 +118,12 @@ img {
 }
 
 .footer {
-    position:relative;
-    bottom:0;
     width: 100%;
 }
 
 .next {
     font-size: 1.5em;
+    margin-left: 50%;
     padding: 10px;
 }
+

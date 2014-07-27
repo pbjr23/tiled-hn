@@ -67,12 +67,11 @@ def get_data(url):
                 title_url = 'https://news.ycombinator.com/' + title_url
         except IndexError:
             title_url = None
-
-        try:
-            next = tree.xpath(base + '92]/td[2]/a')[0].attrib['href']
-        except IndexError:
-            next = None
-
         current = (title, mini_url, title_url, comments_url, author, age, points, comments)
         data.append(current)
+    try:
+        next = tree.xpath(base + str(91 + x) + ']/td[2]/a')[0].attrib['href'].replace('?', ':')
+    except IndexError:
+        next = False
+
     return data, next

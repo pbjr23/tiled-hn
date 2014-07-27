@@ -6,21 +6,22 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     color_values = colors.randomize_colors()
-    data, next = parser.get_data('https://news.ycombinator.com/')
-    return render_template('index.html', zipped=zip(data, color_values), next=next)
+    data, has_next = parser.get_data('https://news.ycombinator.com/')
+    return render_template('index.html', zipped=zip(data, color_values), next=has_next)
 
 
 @app.route('/jobs/')
 def view_jobs():
     color_values = colors.randomize_colors()
-    data, next = parser.get_data('https://news.ycombinator.com/jobs')
-    return render_template('index.html', zipped=zip(data, color_values), jobs=1, next=next)
+    data, has_next = parser.get_data('https://news.ycombinator.com/jobs')
+    return render_template('index.html', zipped=zip(data, color_values), jobs=1, next=has_next)
 
-@app.route('/<page>/')
-def view_page(page):
+@app.route('/<path>/')
+def view_page(path):
+    print 'https://news.ycombinator.com/' + path
     color_values = colors.randomize_colors()
-    data, next = parser.get_data('https://news.ycombinator.com/' + page)
-    return render_template('index.html', zipped=zip(data, color_values), next=next)
+    data, has_next = parser.get_data('https://news.ycombinator.com/' + path.replace(':', '?'))
+    return render_template('index.html', zipped=zip(data, color_values), next=has_next)
 
 if __name__ == '__main__':
     app.run(debug=True)
