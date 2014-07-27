@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, jsonify, redirect, url_for
+from flask import Flask, render_template
 import parser, colors
 
 app = Flask(__name__)
@@ -17,10 +17,9 @@ def view_jobs():
 
 @app.route('/<path>/')
 def view_page(path):
-    print 'https://news.ycombinator.com/' + path
     color_values = colors.randomize_colors()
     data, has_next = parser.get_data('https://news.ycombinator.com/' + path.replace(':', '?'))
     return render_template('index.html', zipped=zip(data, color_values), next=has_next)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
