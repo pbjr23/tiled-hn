@@ -4,24 +4,28 @@ import requests
 URL = 'https://news.ycombinator.com/'
 
 def get_data(url):
+    """Gets all relevant data from input url"""
+
     data = []
     raw = requests.get(url).text.encode('utf-8')
 
+    # Sets up parser
     utf_parser = etree.HTMLParser(encoding="utf-8")
     tree = etree.HTML(raw, parser=utf_parser)
     base = '/html/body/center/table/tr[3]/td/table/tr['
+
+    # Determines which page we are scraping and sets up variables for xpath accordingly
     x = 1
     if url == 'https://news.ycombinator.com/jobs':
         x = 3
     if url == 'https://news.ycombinator.com/show':
         x = 4
 
+    # Finds the number of items in the page
     number_values = len(tree.xpath("//td[@valign='top']"))
+
     for i in range(number_values):
-        # try:
         title = tree.xpath(base + str(x + 3*i) + ']/td[3]/a')[0].text
-        # except:
-        #     print base + str(x + 3*i) + ']/td[3]/a'
 
         try:
             comments = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[2]')[0].text.split(' ')[0]
@@ -31,7 +35,7 @@ def get_data(url):
             comments = None
 
         try:
-            comments_url = 'https://news.ycombinator.com/' + tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[2]')[0].attrib['href']
+            comments_url = URL + tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[2]')[0].attrib['href']
         except IndexError:
             comments_url = None
 
@@ -64,11 +68,14 @@ def get_data(url):
         try:
             title_url = tree.xpath(base + str(x + 3*i) + ']/td[3]/a')[0].attrib['href']
             if title_url[:7] == "item?id":
-                title_url = 'https://news.ycombinator.com/' + title_url
+                title_url = URL + title_url
         except IndexError:
             title_url = None
+
         current = (title, mini_url, title_url, comments_url, author, age, points, comments)
         data.append(current)
+
+    # Gets the link to the next page if applicable
     try:
         next = tree.xpath(base + str(91 + x) + ']/td[2]/a')[0].attrib['href'].replace('?', ':')
     except IndexError:

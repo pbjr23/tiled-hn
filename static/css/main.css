@@ -1,18 +1,8 @@
-@font-face {
-    font-family: Lane;
-    src: url("/static/fonts/lane.ttf");
-}
-
-@font-face {
-    font-family: Lato;
-    src: url("/static/fonts/lato.ttf");
-}
-
 .header {
     height:50px;
     display: block;
     background: none repeat scroll 0 0 !important;
-    font-family: "Lane", sans-serif !important;
+    font-family: "Raleway", sans-serif !important;
     padding: 10px;
     padding-left: 15px;
 }
@@ -22,11 +12,32 @@
     font-size: 2.5em;
 }
 
-.categories {
+.navbar {
     float: right;
+
+}
+.categories {
     padding: 8px 15px;
-    border-left: 1px solid #DDDDDD;
     font-size: 1.5em;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 5px;
+}
+
+li {
+    float: left;
+}
+
+@media only screen and (max-width : 735px) {
+    li {
+        width: 100%;
+    }
+
+    .navbar {
+        float:left;
+    }
 }
 
 .categories:hover {
@@ -34,22 +45,67 @@
     background-color: #444444;
 }
 
+.content {
+    overflow: hidden;
+    width: 100%;
+}
+
 .box {
     display: inline-block;
     background-color: red;
     font-size: 1.25em;
-    height: 176.1px;
-    width: 285px;
+    height: 185.41px;
+    min-width: 94%;
     float: left;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-right: 4px;
-    margin-left: 4px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-right: 8px;
-    padding-left: 8px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
     position: relative;
+}
+
+.box-container {
+    width: 100%;
+    float: left;
+}
+
+@media only screen and (min-width : 600px) {
+    .box-container {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width : 900px) {
+    .box-container {
+        width: 33.3%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .box-container {
+        width: 25%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width : 1500px) {
+    .box-container {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width : 1800px) {
+    .box-container {
+        width: 16.6%;
+        float: left;
+    }
 }
 
 .title {
@@ -123,7 +179,11 @@ img {
 
 .next {
     font-size: 1.5em;
-    margin-left: 50%;
+    margin-left: 45%;
     padding: 10px;
 }
 
+.next:hover {
+    background-color: #444444;
+    color: #EEEEEE;
+}

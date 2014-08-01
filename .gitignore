@@ -1,3 +1,2 @@
-/colors.pyc
-/parser.pyc
+*.pyc
 /venv/*
