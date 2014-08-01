@@ -87,7 +87,7 @@ and (max-device-width : 480px) {
 @media only screen
 and (min-width : 321px) {
     .box-container {
-        width: 33.3%;
+        width: 50%;
         float: left;
     }
 }
@@ -185,7 +185,7 @@ and (max-device-width : 480px)
 and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio : 2) {
     .box-container {
-        width: 33.3%;
+        width: 50%;
         float: left;
     }
 }
