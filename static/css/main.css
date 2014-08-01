@@ -73,7 +73,135 @@ li {
     float: left;
 }
 
-@media only screen and (min-width : 600px) {
+/* Smartphones (portrait and landscape) ----------*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    .box-container {
+        width: 50%;
+        float: left;
+    }
+}
+
+/* Smartphones (landscape) ----------*/
+@media only screen
+and (min-width : 321px) {
+    .box-container {
+        width: 33.3%;
+        float: left;
+    }
+}
+
+/* Smartphones (portrait) ----------*/
+@media only screen
+and (max-width : 320px) {
+    .box-container {
+        width: 50%;
+        float: left;
+    }
+}
+
+/* iPads (portrait and landscape) ----------*/
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    .box-container {
+        width: 25%;
+        float: left;
+    }
+}
+
+/* iPads (landscape) ----------*/
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    .box-container {
+        width: 20%;
+        float: left;
+    }
+}
+
+/* iPads (portrait) ----------*/
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    .box-container {
+        width: 25%;
+        float: left;
+    }
+}
+/*********
+iPad 3
+**********/
+@media
+only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2) {
+    .box-container {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media
+only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+    .box-container {
+        width: 20%;
+        float: left;
+    }
+}
+
+/* Desktops and laptops ----------*/
+@media only screen
+and (min-width : 1224px) {
+    .box-container {
+        width: 20%;
+        float: left;
+    }
+}
+
+/* Large screens ----------*/
+@media only screen
+and (min-width : 1824px) {
+    .box-container {
+        width: 16.6%;
+        float: left;
+    }
+}
+
+/* iPhone 4 ----------*/
+@media
+only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2) {
+    .box-container {
+        width: 33.3%;
+        float: left;
+    }
+}
+
+@media
+only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+    .box-container {
+        width: 50%;
+        float: left;
+    }
+}
+/*@media only screen and (min-width : 600px) {
     .box-container {
         width: 50%;
         float: left;
@@ -108,7 +236,7 @@ li {
     }
 }
 
-.title {
+*/.title {
     padding: 6px;
     padding-top: 10px;
     -moz-border-radius: 10px;
