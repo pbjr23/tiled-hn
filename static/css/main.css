@@ -30,7 +30,7 @@ li {
     float: left;
 }
 
-@media only screen and (max-width : 48.5em) {
+@media only screen and (max-width : 800px) {
     li {
         width: 100%;
     }
@@ -73,35 +73,35 @@ li {
     float: left;
 }
 
-@media only screen and (min-width : 37.5em) {
+@media only screen and (min-width : 600px) {
     .box-container {
         width: 50%;
         float: left;
     }
 }
 
-@media only screen and (min-width : 56.25em) {
+@media only screen and (min-width : 900px) {
     .box-container {
         width: 33.3%;
         float: left;
     }
 }
 
-@media only screen and (min-width : 75em) {
+@media only screen and (min-width : 1200px) {
     .box-container {
         width: 25%;
         float: left;
     }
 }
 
-@media only screen and (min-width : 93.75em) {
+@media only screen and (min-width : 1500px) {
     .box-container {
         width: 20%;
         float: left;
     }
 }
 
-@media only screen and (min-width : 112.5em) {
+@media only screen and (min-width : 1800px) {
     .box-container {
         width: 16.6%;
         float: left;
