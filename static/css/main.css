@@ -96,7 +96,7 @@ and (min-width : 321px) {
 @media only screen
 and (max-width : 320px) {
     .box-container {
-        width: 33.3%;
+        width: 50%;
         float: left;
     }
 }
@@ -154,7 +154,7 @@ and (max-device-width : 1024px)
 and (orientation : portrait)
 and (-webkit-min-device-pixel-ratio : 2) {
     .box-container {
-        width: 20%;
+        width: 25%;
         float: left;
     }
 }
@@ -303,11 +303,11 @@ img {
 
 .footer {
     width: 100%;
+    text-align: center;
 }
 
 .next {
     font-size: 1.5em;
-    margin-left: 45%;
     padding: 10px;
 }
 
