@@ -186,7 +186,7 @@ and (max-device-width : 480px)
 and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio : 2) {
     .box-container {
-        width: 50%;
+        width: 33.3%;
         float: left;
     }
 }
@@ -197,6 +197,13 @@ and (min-device-width : 320px)
 and (max-device-width : 480px)
 and (orientation : portrait)
 and (-webkit-min-device-pixel-ratio : 2) {
+    .box-container {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media only screen and (min-device-width 320px) and (max-device-width 569px) {
     .box-container {
         width: 50%;
         float: left;
@@ -252,11 +259,12 @@ and (-webkit-min-device-pixel-ratio : 2) {
     background-color:rgba(0,0,0,0.7) !important;
 }
 
+
 .bottom {
-    padding: 6px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     font-size: 0.8em;
+    height: 29%;
 }
 
 .bottom:hover {
@@ -264,14 +272,15 @@ and (-webkit-min-device-pixel-ratio : 2) {
 }
 
 .right {
-    position: absolute;
-    right: 17px;
-    bottom: 17px;
+    float: right;
     text-align: right;
+    padding: 5px;
 }
 
 .left {
     text-align: left;
+    float: left;
+    padding: 5px;
 }
 
 body {
