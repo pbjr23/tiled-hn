@@ -69,11 +69,11 @@ li {
     position: relative;
 }
 
-.box-container {
+/*.box-container {
     width: 100%;
     float: left;
 }
-
+*/
 @media only screen and (min-device-width 320px) and (max-device-width 569px) {
     .box-container {
         width: 50%;
