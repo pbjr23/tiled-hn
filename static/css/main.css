@@ -203,12 +203,6 @@ and (-webkit-min-device-pixel-ratio : 2) {
     }
 }
 
-@media only screen and (min-device-width 320px) and (max-device-width 569px) {
-    .box-container {
-        width: 50%;
-        float: left;
-    }
-}
 /*@media only screen and (min-width : 600px) {
     .box-container {
         width: 50%;
