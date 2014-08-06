@@ -122,19 +122,22 @@ li {
         float: left;
     }
     .name {
-        font-size: 2em;
+        font-size: 2.25em;
     }
     .box {
-        font-size: 0.75em;
+        font-size: 1em;
     }
     .bottom {
-        font-size: 0.5em;
+        font-size: 0.75em;
     }
     .title-url {
-        font-size: 0.6em;
+        font-size: 0.75em;
     }
     .name {
         font-size: 1.25em;
+    }
+    .categories {
+        font-size: 1em;
     }
 }
 
@@ -142,6 +145,24 @@ li {
     .box-container {
         width: 33.3%;
         float: left;
+    }
+    .name {
+        font-size: 2.25em;
+    }
+    .box {
+        font-size: 1em;
+    }
+    .bottom {
+        font-size: 0.75em;
+    }
+    .title-url {
+        font-size: 0.75em;
+    }
+    .name {
+        font-size: 1.25em;
+    }
+    .categories {
+        font-size: 1em;
     }
 }
 
