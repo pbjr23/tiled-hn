@@ -31,7 +31,7 @@ li {
     float: left;
 }
 
-@media only screen and (max-width : 800px) {
+/*@media only screen and (max-width : 790px) {
     li {
         width: 100%;
     }
@@ -39,7 +39,7 @@ li {
     .navbar {
         float:left;
     }
-}
+}*/
 
 .categories:hover {
     color: #EEEEEE;
@@ -120,6 +120,21 @@ li {
     .box-container {
         width: 50%;
         float: left;
+    }
+    .name {
+        font-size: 2em;
+    }
+    .box {
+        font-size: 0.75em;
+    }
+    .bottom {
+        font-size: 0.5em;
+    }
+    .title-url {
+        font-size: 0.6em;
+    }
+    .name {
+        font-size: 1.25em;
     }
 }
 

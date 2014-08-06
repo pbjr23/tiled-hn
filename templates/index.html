@@ -11,6 +11,8 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/static/css/main.css">
         <link rel="stylesheet" href="/static/css/icons.css">
+        <link rel="stylesheet" href="/static/css/responsive-nav.css">
+        <script src="/static/js/responsive-nav.js"></script>
         <title>Tiled Hacker News</title>
         <style type="text/css">
             {% set counter = 0 -%}
@@ -26,16 +28,16 @@
     <body>
         <div class="header">
             <div class="name"><i class="icon-hacker-news"></i>TiledHN</div>
-            <div class="navbar">
+            <nav class="nav-collapse">
                 <ul>
-                    <a href="/"><li class="categories">Home</li></a>
-                    <a href="/newest/"><li class="categories">New</li></a>
-                    <a href="/show/"><li class="categories">Show</li></a>
-                    <a href="/ask/"><li class="categories">Ask</li></a>
-                    <a href="/jobs/"><li class="categories">Jobs</li></a>
-                    <a href="link"><li class="categories"><i class="icon-github"></i></li></a>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/newest/">New</a></li>
+                    <li><a href="/show/">Show</a></li>
+                    <li><a href="/ask/">Ask</a></li>
+                    <li><a href="/jobs/">Jobs</a></li>
+                    <li><a href="link"><i class="icon-github"></i></a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
 
 
