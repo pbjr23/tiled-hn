@@ -9,7 +9,7 @@
 
 .name {
     float:left;
-    font-size: 30px;
+    font-size: 26pt;
     margin-top: 3px;
 }
 
@@ -19,7 +19,7 @@
 }
 .categories {
     padding: 8px 15px;
-    font-size: 18px;
+    font-size: 15pt;
 }
 
 ul {
@@ -54,7 +54,7 @@ li {
 .box {
     display: inline-block;
     background-color: red;
-    font-size: 15px;
+    font-size: 15pt;
     height: 185.41px;
     min-width: 94%;
     float: left;
@@ -190,7 +190,7 @@ li {
 .bottom {
     -moz-border-radius: 10px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 12pt;
     height: 29%;
 }
 
@@ -237,7 +237,7 @@ img {
 
 .title-url {
     color: #DDDDDD;
-    font-size: 11px;
+    font-size: 11pt;
 }
 
 .footer {
@@ -246,7 +246,7 @@ img {
 }
 
 .next {
-    font-size: 18px;
+    font-size: 18pt;
     padding: 10px;
 }
 
