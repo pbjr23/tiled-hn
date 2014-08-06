@@ -74,21 +74,49 @@ li {
     float: left;
 }
 
-@media only screen and (max-width: 767px) and (orientation: portrait) {
+@media only screen and (min-width: 320px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
     .box-container {
         width: 50%;
         float: left;
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 640px) and (-webkit-device-pixel-ratio: 2) {
     .box-container {
         width: 33.3%;
         float: left;
     }
 }
 
+@media only screen and (min-width: 767px) and (-webkit-device-pixel-ratio: 2) {
+    .box-container {
+        width: 25%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .box-container {
+        width: 50%;
+        float: left;
+    }
+}
+
 @media only screen and (min-width: 768px) {
+    .box-container {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .box-container {
+        width: 33.3%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
     .box-container {
         width: 25%;
         float: left;
@@ -175,12 +203,14 @@ li {
     float: right;
     text-align: right;
     padding: 5px;
+    padding-right: 8px;
 }
 
 .left {
     text-align: left;
     float: left;
     padding: 5px;
+    padding-left: 8px;
 }
 
 body {

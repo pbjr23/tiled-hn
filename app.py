@@ -19,4 +19,4 @@ def main(path=''):
     return render_template('index.html', zipped=zip(data, color_values), jobs=job_value, next=has_next)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
