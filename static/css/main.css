@@ -135,9 +135,11 @@ li {
     }
     .name {
         font-size: 1.25em;
+        width: 100%;
+        text-align: center;
     }
     .categories {
-        font-size: 0.7em;
+        font-size: 1em;
         padding: 5px 5px;
     }
     .left-margin {
