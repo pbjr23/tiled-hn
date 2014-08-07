@@ -151,7 +151,7 @@ li {
         float: center;
     }
     .left, .right {
-        width: 30%
+        width: auto;
     }
 }
 
@@ -180,6 +180,9 @@ li {
     }
     .header {
         height: 0px;
+    }
+    .left, .right {
+        width: auto;
     }
 }
 
