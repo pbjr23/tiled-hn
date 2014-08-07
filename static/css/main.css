@@ -188,6 +188,11 @@ li {
         width: 25%;
         float: left;
     }
+    .name {
+        float:left;
+        font-size: 2.5em;
+        margin-top: 3px;
+    }
 }
 /*@media only screen and (min-width : 600px) {
     .box-container {
