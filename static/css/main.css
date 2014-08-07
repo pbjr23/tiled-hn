@@ -150,12 +150,9 @@ li {
     .navbar {
         float: center;
     }
-    .left, .right {
-        width: auto;
-    }
 }
 
-@media only screen and (min-width: 560px) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-width: 640px) and (-webkit-device-pixel-ratio: 2) {
     .box-container {
         width: 33.3%;
         float: left;
@@ -166,7 +163,10 @@ li {
     .box {
         font-size: 1em;
     }
-    .bottom, .title-url {
+    .bottom {
+        font-size: 0.75em;
+    }
+    .title-url {
         font-size: 0.75em;
     }
     .name {
@@ -181,9 +181,6 @@ li {
     .header {
         height: 0px;
     }
-    .left, .right {
-        width: auto;
-    }
 }
 
 @media only screen and (min-width: 767px) and (-webkit-device-pixel-ratio: 2) {
@@ -196,6 +193,7 @@ li {
         font-size: 2.5em;
         margin-top: 3px;
     }
+
 }
 /*@media only screen and (min-width : 600px) {
     .box-container {
@@ -264,11 +262,6 @@ li {
     text-align: right;
     padding: 5px;
     padding-right: 8px;
-    width: 45%;
-}
-
-.user:hover {
-    color:gray;
 }
 
 .left {
@@ -276,7 +269,6 @@ li {
     float: left;
     padding: 5px;
     padding-left: 8px;
-    width: 45%;
 }
 
 body {
