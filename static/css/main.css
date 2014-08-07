@@ -150,6 +150,9 @@ li {
     .navbar {
         float: center;
     }
+    .left, .right {
+        width:40%
+    }
 }
 
 @media only screen and (min-width: 640px) and (-webkit-device-pixel-ratio: 2) {
@@ -163,10 +166,7 @@ li {
     .box {
         font-size: 1em;
     }
-    .bottom {
-        font-size: 0.75em;
-    }
-    .title-url {
+    .bottom, .title-url {
         font-size: 0.75em;
     }
     .name {
