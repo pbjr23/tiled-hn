@@ -15,7 +15,6 @@
 
 .navbar {
     float: right;
-
 }
 .categories {
     padding: 8px 15px;
@@ -147,6 +146,9 @@ li {
     }
     .header {
         height: 0px;
+    }
+    .navbar {
+        float: center;
     }
 }
 
