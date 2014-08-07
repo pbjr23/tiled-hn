@@ -151,11 +151,11 @@ li {
         float: center;
     }
     .left, .right {
-        width:40%
+        width: 30%
     }
 }
 
-@media only screen and (min-width: 640px) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-width: 560px) and (-webkit-device-pixel-ratio: 2) {
     .box-container {
         width: 33.3%;
         float: left;
