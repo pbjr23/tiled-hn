@@ -137,10 +137,14 @@ li {
         font-size: 1.25em;
     }
     .categories {
-        font-size: 1em;
+        font-size: 0.75em;
+        padding: 5px 5px;
     }
-    .margin-left {
+    .left-margin {
         margin-bottom: 5px;
+    }
+    .header {
+        height: 0px;
     }
 }
 
@@ -166,6 +170,12 @@ li {
     }
     .categories {
         font-size: 1em;
+    }
+    .left-margin {
+        margin-bottom: 5px;
+    }
+    .header {
+        height: 0px;
     }
 }
 
