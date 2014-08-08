@@ -16,6 +16,7 @@
 .navbar {
     float: right;
 }
+
 .categories {
     padding: 8px 15px;
     font-size: 1.5em;
@@ -150,9 +151,12 @@ li {
     .navbar {
         float: center;
     }
+    .left, .right {
+        width: auto;
+    }
 }
 
-@media only screen and (min-width: 640px) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-width: 560px) and (-webkit-device-pixel-ratio: 2) {
     .box-container {
         width: 33.3%;
         float: left;
@@ -163,10 +167,7 @@ li {
     .box {
         font-size: 1em;
     }
-    .bottom {
-        font-size: 0.75em;
-    }
-    .title-url {
+    .bottom, .title-url {
         font-size: 0.75em;
     }
     .name {
@@ -181,6 +182,9 @@ li {
     .header {
         height: 0px;
     }
+    .left, .right {
+        width: auto;
+    }
 }
 
 @media only screen and (min-width: 767px) and (-webkit-device-pixel-ratio: 2) {
@@ -193,44 +197,9 @@ li {
         font-size: 2.5em;
         margin-top: 3px;
     }
-
-}
-/*@media only screen and (min-width : 600px) {
-    .box-container {
-        width: 50%;
-        float: left;
-    }
 }
 
-@media only screen and (min-width : 900px) {
-    .box-container {
-        width: 33.3%;
-        float: left;
-    }
-}
-
-@media only screen and (min-width : 1200px) {
-    .box-container {
-        width: 25%;
-        float: left;
-    }
-}
-
-@media only screen and (min-width : 1500px) {
-    .box-container {
-        width: 20%;
-        float: left;
-    }
-}
-
-@media only screen and (min-width : 1800px) {
-    .box-container {
-        width: 16.6%;
-        float: left;
-    }
-}
-
-*/.title {
+.title {
     padding: 6px;
     padding-top: 10px;
     -moz-border-radius: 10px;
@@ -257,11 +226,21 @@ li {
     background-color:rgba(0,0,0,0.7) !important;
 }
 
-.right {
+.pull-left {
+    float: left;
+    padding-left: 8px;
+    padding-top: 3px;
+}
+
+.pull-right {
     float: right;
     text-align: right;
-    padding: 5px;
     padding-right: 8px;
+    padding-top: 3px;
+}
+
+.user:hover {
+    color:gray;
 }
 
 .left {
@@ -269,6 +248,14 @@ li {
     float: left;
     padding: 5px;
     padding-left: 8px;
+}
+
+.upper {
+    overflow: hidden;
+}
+
+.lower {
+    overflow: hidden;
 }
 
 body {
