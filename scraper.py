@@ -82,6 +82,3 @@ def get_data(url):
         next = False
 
     return data, next
-
-print get_data('https://news.ycombinator.com/news?p=2')
-# /html/body/center/table/tr[3]/td/table/tr[2]/td[2]
