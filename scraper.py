@@ -54,6 +54,7 @@ def get_data(url):
         except IndexError:
             mini_url = None
 
+        # For jobs page and elements with only age attribute
         if x == 3 or (author == None and points == None):
             try:
                 age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]')[0].text.replace('minutes', 'min')
