@@ -10,13 +10,13 @@ def main(path=''):
     color_values = colors.randomize_colors()
     data, has_next = parser.get_data('https://news.ycombinator.com/' + path.replace(':', '?'))
 
-    # Template looks slightly different for 'jobs' urls
+    # Only one attribute to show
     if 'jobs' in path:
-        job_value = 1
+        flag = 1
     else:
-        job_value = None
+        flag = None
 
-    return render_template('index.html', zipped=zip(data, color_values), jobs=job_value, next=has_next)
+    return render_template('index.html', zipped=zip(data, color_values), jobs=flag, next=has_next)
 
 if __name__ == '__main__':
     app.run(debug=True)

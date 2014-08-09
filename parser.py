@@ -54,7 +54,7 @@ def get_data(url):
         except IndexError:
             mini_url = None
 
-        if x == 3:
+        if x == 3 or (author == None and points == None):
             try:
                 age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]')[0].text.replace('minutes', 'min')
             except IndexError:
@@ -82,3 +82,6 @@ def get_data(url):
         next = False
 
     return data, next
+
+print get_data('https://news.ycombinator.com/news?p=2')
+# /html/body/center/table/tr[3]/td/table/tr[2]/td[2]

@@ -52,7 +52,7 @@
 
                     <a href="{{ item[3] if item[3] != None else item[2] }}" target="_blank">
                         <div class="bottom" style="background-color: {{ color[1] }}">
-                            {% if jobs or item[3] == None %}
+                            {% if flag or item[3] == None %}
                             <div class="left" style="width:100%">
                                 <i class="icon-clock"></i> {{ item[5] }}
                             </div>
