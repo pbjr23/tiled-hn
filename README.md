@@ -1,7 +1,8 @@
-tiled-hn
+TiledHN
 ========
 
 A colorful, tiled design for Hacker News.
+www.tiledhn.com
 
 Technology
 ==========
@@ -10,3 +11,4 @@ Technology
 
 Screenshots
 ===========
+![alt tag](https://raw.github.com/pbjr23/tiled-hn/master/static/screenshots/tiledhn-1.png)
