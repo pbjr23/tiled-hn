@@ -12,4 +12,4 @@ Technology
 
 Screenshots
 ===========
-![alt tag](https://raw.github.com/pbjr23/tiled-hn/master/static/screenshots/tiledhn-1.png)
+![ScreenShot](https://raw.github.com/pbjr23/tiled-hn/master/static/screenshots/tiledhn-1.png)
