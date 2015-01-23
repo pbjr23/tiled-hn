@@ -50,7 +50,7 @@ def get_data(url):
             author = None
 
         try:
-            mini_url = tree.xpath(base + str(x + 3*i) + ']/td[3]/span')[0].text.strip()
+            mini_url = tree.xpath(base + str(x + 3*i) + ']/td[3]/span[2]')[0].text.strip()
         except IndexError:
             mini_url = None
 
