@@ -28,7 +28,7 @@ def get_data(url):
         title = tree.xpath(base + str(x + 3*i) + ']/td[3]/a')[0].text
 
         try:
-            comments = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[2]')[0].text.split(' ')[0]
+            comments = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[3]')[0].text.split(' ')[0]
             if comments == 'discuss':
                 comments = None
         except IndexError:
@@ -58,11 +58,12 @@ def get_data(url):
         if x == 3 or (author == None and points == None):
             try:
                 age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]')[0].text.replace('minutes', 'min')
+                print age
             except IndexError:
                 age = None
         else:
             try:
-                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[1]')[0].tail[1:-4].replace(' ago', '')
+                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[2]')[0].text.replace(' ago', '')
             except IndexError:
                 age = None
 
@@ -81,5 +82,7 @@ def get_data(url):
         next = tree.xpath(base + str(91 + x) + ']/td[2]/a')[0].attrib['href'].replace('?', ':')
     except IndexError:
         next = False
-
     return data, next
+
+
+# print get_data(URL)
