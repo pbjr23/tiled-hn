@@ -12,62 +12,60 @@ def get_data(url):
     # Sets up parser
     utf_parser = etree.HTMLParser(encoding="utf-8")
     tree = etree.HTML(raw, parser=utf_parser)
-    base = '/html/body/center/table/tr[3]/td/table/tr['
+    base = '//*[@id="hnmain"]/tr[3]/td/table/tr['
 
     # Determines which page we are scraping and sets up variables for xpath accordingly
     x = 1
-    if url == 'https://news.ycombinator.com/jobs':
-        x = 3
-    if url == 'https://news.ycombinator.com/show':
+    if 'jobs' in url or 'show' in url:
         x = 4
 
     # Finds the number of items in the page
-    number_values = len(tree.xpath("//td[@valign='top']"))
+    number_values = len(tree.xpath("//tr[@class='athing']"))
 
     for i in range(number_values):
-        title = tree.xpath(base + str(x + 3*i) + ']/td[3]/a')[0].text
+        title = tree.xpath(base + '{}]/td[3]/a'.format(x+3*i))[0].text
 
         try:
-            comments = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[2]')[0].text.split(' ')[0]
+            comments = tree.xpath(base + '{}]/td[2]/a[3]'.format(x+3*i+1))[0].text.split(' ')[0]
             if comments == 'discuss':
                 comments = None
         except IndexError:
             comments = None
 
         try:
-            comments_url = URL + tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[2]')[0].attrib['href']
+            comments_url = URL + tree.xpath(base + '{}]/td[2]/a[3]'.format(x+3*i+1))[0].attrib['href']
         except IndexError:
             comments_url = None
 
         try:
-            points = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/span')[0].text.split(' ')[0]
+            points = tree.xpath(base + '{}]/td[2]/span[1]'.format(x+3*i+1))[0].text.split(' ')[0]
         except IndexError:
             points = None
 
         try:
-            author = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[1]')[0].text
+            author = tree.xpath(base + '{}]/td[2]/a[1]'.format(x+3*i+1))[0].text.split(' ')[0]
         except IndexError:
             author = None
 
         try:
-            mini_url = tree.xpath(base + str(x + 3*i) + ']/td[3]/span')[0].text.strip()
+            mini_url = tree.xpath(base + '{}]/td[3]/span[2]/a/span'.format(x+3*i))[0].text
         except IndexError:
             mini_url = None
 
         # For jobs page and elements with only age attribute
-        if x == 3 or (author == None and points == None):
+        if 'jobs' in url or (author == None and points == None):
             try:
-                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]')[0].text.replace('minutes', 'min')
+                age = tree.xpath(base + '{}]/td[2]'.format(x+3*i+1))[0].text.strip().replace('minutes', 'min').replace(' ago', '')
             except IndexError:
                 age = None
         else:
             try:
-                age = tree.xpath(base + str(x + 1 + 3*i) + ']/td[2]/a[1]')[0].tail[1:-4].replace(' ago', '')
+                age = tree.xpath(base + '{}]/td[2]/a[2]'.format(x+3*i+1))[0].text.strip().replace('minutes', 'min').replace(' ago', '')
             except IndexError:
                 age = None
 
         try:
-            title_url = tree.xpath(base + str(x + 3*i) + ']/td[3]/a')[0].attrib['href']
+            title_url = tree.xpath(base + '{}]/td[3]/a'.format(x+3*i))[0].attrib['href']
             if title_url[:7] == "item?id":
                 title_url = URL + title_url
         except IndexError:
@@ -78,7 +76,7 @@ def get_data(url):
 
     # Gets the link to the next page if applicable
     try:
-        next = tree.xpath(base + str(91 + x) + ']/td[2]/a')[0].attrib['href'].replace('?', ':')
+        next = tree.xpath(base + '{}]/td[2]/a'.format(91+x))[0].attrib['href'].replace('?', ':')
     except IndexError:
         next = False
 
