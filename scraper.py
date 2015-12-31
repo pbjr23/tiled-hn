@@ -1,45 +1,47 @@
-from lxml import etree
+from lxml import html
 import requests
 
 URL = 'https://news.ycombinator.com/'
 
-def get_data(url):
+def get_data(url=URL):
     """Gets all relevant data from input url"""
 
     data = []
     raw = requests.get(url).text.encode('utf-8')
 
     # Sets up parser
-    utf_parser = etree.HTMLParser(encoding="utf-8")
-    tree = etree.HTML(raw, parser=utf_parser)
+    tree = html.fromstring(raw)
     base = '//*[@id="hnmain"]/tr[3]/td/table/tr['
 
     # Determines which page we are scraping and sets up variables for xpath accordingly
     x = 1
+    newest = 0
     if 'jobs' in url or 'show' in url:
         x = 4
+    if 'newest' in url:
+        newest = 2
 
     # Finds the number of items in the page
     number_values = len(tree.xpath("//tr[@class='athing']"))
 
     for i in range(number_values):
-        title = tree.xpath(base + '{}]/td[3]/a'.format(x+3*i))[0].text
+        title = tree.xpath(base + '{}]/td[@class="title"]/a'.format(x+3*i))[0].text
 
         try:
-            comments = tree.xpath(base + '{}]/td[2]/a[3]'.format(x+3*i+1))[0].text.split(' ')[0]
+            comments = tree.xpath(base + '{}]/td[2]/a[{}]'.format(x+3*i+1, 2+newest))[0].text.split(' ')[0]
             if comments == 'discuss':
                 comments = None
         except IndexError:
             comments = None
 
         try:
-            comments_url = URL + tree.xpath(base + '{}]/td[2]/a[3]'.format(x+3*i+1))[0].attrib['href']
+            comments_url = URL + tree.xpath(base + '{}]/td[2]/a[2]'.format(x+3*i+1))[0].attrib['href']
         except IndexError:
             comments_url = None
 
         try:
-            points = tree.xpath(base + '{}]/td[2]/span[1]'.format(x+3*i+1))[0].text.split(' ')[0]
-        except IndexError:
+            points = tree.xpath(base + '{}]/td[2]/span[@class="score"]'.format(x+3*i+1))[0].text.split(' ')[0]
+        except IndexError, AttributeError:
             points = None
 
         try:
@@ -55,7 +57,12 @@ def get_data(url):
         # For jobs page and elements with only age attribute
         if 'jobs' in url or (author == None and points == None):
             try:
-                age = tree.xpath(base + '{}]/td[2]'.format(x+3*i+1))[0].text.strip().replace('minutes', 'min').replace(' ago', '')
+                age = tree.xpath(base + '{}]/td[2]/span/a'.format(x+3*i+1))[0].text.strip().replace('minutes', 'min').replace(' ago', '')
+            except IndexError:
+                age = None
+        elif newest:
+            try:
+                age = tree.xpath(base + '{}]/td[2]/span[2]/a'.format(x+3*i+1))[0].text.strip().replace('minutes', 'min').replace(' ago', '')
             except IndexError:
                 age = None
         else:
