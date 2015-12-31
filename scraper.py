@@ -1,4 +1,4 @@
-from lxml import html
+from lxml import etree
 import requests
 
 URL = 'https://news.ycombinator.com/'
@@ -10,7 +10,8 @@ def get_data(url=URL):
     raw = requests.get(url).text.encode('utf-8')
 
     # Sets up parser
-    tree = html.fromstring(raw)
+    utf_parser = etree.HTMLParser(encoding="utf-8")
+    tree = etree.HTML(raw, parser=utf_parser)
     base = '//*[@id="hnmain"]/tr[3]/td/table/tr['
 
     # Determines which page we are scraping and sets up variables for xpath accordingly
