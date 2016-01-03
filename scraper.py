@@ -68,7 +68,7 @@ def get_data(url=URL):
                 age = None
         else:
             try:
-                age = tree.xpath(base + '{}]/td[2]/a[2]'.format(x+3*i+1))[0].text.strip().replace('minutes', 'min').replace(' ago', '')
+                age = tree.xpath(base + '{}]/td[2]/span[@class="age"]/a'.format(x+3*i+1))[0].text.strip().replace('minutes', 'min').replace(' ago', '')
             except IndexError:
                 age = None
 
