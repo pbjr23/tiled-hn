@@ -24,25 +24,25 @@ def get_data(url=URL):
 
     # Finds the number of items in the page
     number_values = len(tree.xpath("//tr[@class='athing']"))
-
+    number_values
     for i in range(number_values):
         title = tree.xpath(base + '{}]/td[@class="title"]/a'.format(x+3*i))[0].text
 
         try:
-            comments = tree.xpath(base + '{}]/td[2]/a[{}]'.format(x+3*i+1, 2+newest))[0].text.split(' ')[0]
+            comments = tree.xpath(base + '{}]/td[2]/a[{}]'.format(x+3*i+1, 3+newest))[0].text.replace(u'\xa0', u' ').split(' ')[0]
             if comments == 'discuss':
                 comments = None
         except IndexError:
             comments = None
 
         try:
-            comments_url = URL + tree.xpath(base + '{}]/td[2]/a[2]'.format(x+3*i+1))[0].attrib['href']
+            comments_url = URL + tree.xpath(base + '{}]/td[2]/a[3]'.format(x+3*i+1))[0].attrib['href']
         except IndexError:
             comments_url = None
 
         try:
             points = tree.xpath(base + '{}]/td[2]/span[@class="score"]'.format(x+3*i+1))[0].text.split(' ')[0]
-        except IndexError, AttributeError:
+        except (IndexError, AttributeError):
             points = None
 
         try:
@@ -51,7 +51,7 @@ def get_data(url=URL):
             author = None
 
         try:
-            mini_url = tree.xpath(base + '{}]/td[3]/span[2]/a/span'.format(x+3*i))[0].text
+            mini_url = tree.xpath(base + '{}]/td[3]/span/a/span'.format(x+3*i))[0].text
         except IndexError:
             mini_url = None
 

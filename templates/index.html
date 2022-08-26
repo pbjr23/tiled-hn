@@ -13,12 +13,12 @@
         <link rel="stylesheet" href="/static/css/icons.css">
         <title>Tiled Hacker News</title>
         <style type="text/css">
-            {% set counter = 0 -%}
+            {% set count = namespace(value=0) %}
             {% for item, color in zipped %}
-                .box{{counter}}:hover {
+                .box{{count.value}}:hover {
                     background-color: {{ color[2] }} !important;
                 }
-            {% set counter = counter + 1 -%}
+            {% set count.value = count.value + 1 %}
             {% endfor %}
         </style>
     </head>
@@ -39,10 +39,10 @@
         </div>
 
         <div class="content">
-            {% set counter = 0 -%}
+            {% set count = namespace(value=0) %}
             {% for item, color in zipped %}
             <div class="box-container">
-                <div class="box box{{counter}}" style="background-color: {{ color[0] }}">
+                <div class="box box{{count.value}}" style="background-color: {{ color[0] }}">
                     <a href="{{ item[2] }}" target="_blank">
                         <div class="title" style="background-color: {{ color[1] }}">
                             {{item[0]}} <span class="title-url"> {{item[1] if item[1] != None}} </span>
@@ -78,7 +78,7 @@
                     </a>
                 </div>
             </div>
-            {% set counter = counter + 1 -%}
+            {% set count.value = count.value + 1 %}
             {% endfor %}
         </div>
 
