@@ -43,33 +43,33 @@
             {% for item, color in zipped %}
             <div class="box-container">
                 <div class="box box{{count.value}}" style="background-color: {{ color[0] }}">
-                    <a href="{{ item[2] }}" target="_blank">
+                    <a href="{{ item['title_url'] }}" target="_blank">
                         <div class="title" style="background-color: {{ color[1] }}">
-                            {{item[0]}} <span class="title-url"> {{item[1] if item[1] != None}} </span>
+                            {{item['title']}} <span class="title-url"> {{item['mini_url'] if item['mini_url'] != None}} </span>
                         </div>
                     </a>
 
-                    <a href="{{ item[3] if item[3] != None else item[2] }}" target="_blank">
+                    <a href="{{ item['comments_url'] if item['comments_url'] != None else item['title'] }}" target="_blank">
                         <div class="bottom" style="background-color: {{ color[1] }}">
-                            {% if flag or item[3] == None %}
+                            {% if flag or item['comments_url'] == None %}
                             <div class="left" style="width:100%">
-                                <i class="icon-clock"></i> {{ item[5] }}
+                                <i class="icon-clock"></i> {{ item['age'] }}
                             </div>
                             {% else %}
                             <div class="upper">
-                                <div class="left-margin pull-left"> <i class="icon-clock"></i> {{ item[5] }} </div>
+                                <div class="left-margin pull-left"> <i class="icon-clock"></i> {{ item['age'] }} </div>
                                 <div class="left-margin pull-right">
                                     <i class="icon-chat"></i>
-                                    {{ item[7] if item[7] != None else "0"}}
+                                    {{ item['comments'] if item['comments'] != None else "0"}}
                                 </div>
                             </div>
 
                             <div class="lower">
-                                <div class="pull-left"> <i class="icon-thumbs-up-alt"></i> {{ item[6] }} </div>
-                                <a href="https://news.ycombinator.com/user?id={{ item[4] }}" target="_blank">
+                                <div class="pull-left"> <i class="icon-thumbs-up-alt"></i> {{ item['points'] }} </div>
+                                <a href="https://news.ycombinator.com/user?id={{ item['author'] }}" target="_blank">
                                     <div class="user pull-right">
                                         <i class="icon-user"></i>
-                                        {{ item[4] }}
+                                        {{ item['author'] }}
                                     </div>
                                 </a>
                             </div>

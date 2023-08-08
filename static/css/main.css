@@ -253,6 +253,7 @@ li {
 
 .upper {
     overflow: hidden;
+    padding-top: 2px;
 }
 
 .lower {
@@ -290,6 +291,7 @@ img {
 .footer {
     width: 100%;
     text-align: center;
+    margin-top: 15px;
 }
 
 .next {
